@@ -1,7 +1,12 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="controls_whileUntil" id="30" inline="false" x="197" y="32">
-    <field name="MODE">WHILE</field>
-    <next>
+    <field name="MODE">UNTIL</field>
+    <value name="NUMBER">
+      <block type="sensor_button" id="56">
+        <field name="OBJECT">ENTER</field>
+      </block>
+    </value>
+    <statement name="DO">
       <block type="variables_set" id="99" inline="true">
         <field name="VAR">LEFTfRONT</field>
         <value name="VALUE">
@@ -27,30 +32,27 @@
               </block>
             </value>
             <statement name="DO0">
-              <block type="movement_forward" id="385"></block>
-            </statement>
-            <next>
-              <block type="robot_delay" id="429" inline="true">
-                <value name="DELAY">
-                  <block type="math_number" id="450">
-                    <field name="NUM">200</field>
-                  </block>
-                </value>
+              <block type="movement_forward" id="385">
                 <next>
-                  <block type="movement_stop" id="465">
+                  <block type="robot_delay" id="429" inline="true">
+                    <value name="DELAY">
+                      <block type="math_number" id="450">
+                        <field name="NUM">200</field>
+                      </block>
+                    </value>
                     <next>
-                      <block type="movement_stop" id="495"></block>
+                      <block type="movement_stop" id="465"></block>
                     </next>
                   </block>
                 </next>
               </block>
-            </next>
+            </statement>
           </block>
         </next>
       </block>
+    </statement>
+    <next>
+      <block type="movement_stop" id="495"></block>
     </next>
-  </block>
-  <block type="sensor_button" id="56" x="233" y="57">
-    <field name="OBJECT">ENTER</field>
   </block>
 </xml>
